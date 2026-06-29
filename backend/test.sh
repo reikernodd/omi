@@ -270,7 +270,7 @@ run_pytest tests/unit/test_apps_create_app_json.py -v
 # Optional fair-use integration tests require Redis and are intentionally outside
 # the deterministic unit signal.
 if [[ "${RUN_BACKEND_INTEGRATION_TESTS:-0}" == "1" ]]; then
-  if redis-cli ping >/dev/null 2>&1; then
+  if command -v redis-cli >/dev/null 2>&1 && redis-cli ping >/dev/null 2>&1; then
     run_pytest tests/integration/test_fair_use_live.py -v
     run_pytest tests/integration/test_fair_use_api.py -v
   else

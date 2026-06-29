@@ -51,6 +51,7 @@ _stubs = [
     'firebase_admin.firestore',
     'google.cloud.firestore',
     'google.cloud.firestore_v1',
+    'utils.request_validation',
     'utils.other.endpoints',
     'utils.other.storage',
     'utils.conversations.factory',
@@ -148,6 +149,11 @@ _endpoints.get_current_user_uid = _fake_get_current_user_uid
 _endpoints.with_rate_limit = _fake_with_rate_limit
 _endpoints.get_user = MagicMock()
 _register_module('utils.other.endpoints', _endpoints)
+
+_request_validation = ModuleType('utils.request_validation')
+_request_validation.NonNegativeOffset = int
+_request_validation.PositiveLimit = int
+_register_module('utils.request_validation', _request_validation)
 
 from fastapi import FastAPI  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
