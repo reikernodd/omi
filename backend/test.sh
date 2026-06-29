@@ -61,6 +61,7 @@ run_pytest tests/unit/test_parakeet_endpoints.py -v
 run_pytest tests/unit/test_audiobuffer_guard.py -v
 run_pytest tests/unit/test_memory_leak_buffers.py -v
 run_pytest tests/unit/test_hermetic_network.py -v
+run_pytest tests/unit/test_hermetic_network_collection_guard.py -v
 run_pytest tests/unit/test_mcp_search_memories.py -v
 run_pytest tests/unit/test_mcp_search_conversations_poison.py -v
 run_pytest tests/unit/test_mcp_memory_filters.py -v
